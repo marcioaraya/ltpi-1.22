@@ -28,9 +28,9 @@
         # tratar os dados do formulário
         $peso = str_replace(",", ".", $_GET["peso"]);
         $altura = str_replace(",", ".", $_GET["altura"]);
-
+        # calcula imc
         $imc = $peso / ($altura * $altura);
-
+        # verifica qual é a situacao de acordo com valor do imc
         if ($imc >= 40.0 ) {
             $situacao = "Obesidade III (Mórbida)";
         } elseif ($imc >= 35) {
@@ -46,10 +46,12 @@
         } else {
             $situacao = "Muito abaixo do Peso";
         }
-
-        echo "<p>O IMC é $imc ($situacao).</p>";
+        #exibe imc e situacao
+        echo "<p>O IMC é ".str_replace(".", ",", sprintf("%01.2f", $imc))." ($situacao).</p>";
+        echo "<p><a href=\"imc.php\">Novo cálculo</a></p>";
 
     }
     ?>
+
 </body>
 </html>
