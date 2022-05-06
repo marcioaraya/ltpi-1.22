@@ -15,11 +15,13 @@
     if (!isset($_GET["bt_submit"])) {
     ?>
         <form action="imc.php" method="GET">
-        <label for="in_altura">Altura:</label>
-        <input type="text" name="altura" id="in_altura" placeholder="Digite a altura">
+        <label for="in_altura">
+            Altura:
+        </label>
+        <input type="text" name="altura" id="in_altura" placeholder="Digite a altura" required> 
         <br>
         <label for="in_peso">Peso</label>
-        <input type="text" name="peso" id="in_peso" placeholder="Digite o peso">
+        <input type="text" name="peso" id="in_peso" placeholder="Digite o peso" required>
         <br>
         <input type="submit" value="Calcular" name="bt_submit">
         </form>
