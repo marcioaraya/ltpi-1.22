@@ -1,0 +1,3 @@
+{"nome":"Marcio","dt_nasc":"1968-01-01","sexo":"M"}
+{"nome":"Marcio","dt_nasc":"1968-01-01","sexo":"M"}
+{"nome":"Marcio","dt_nasc":"1968-01-01","sexo":"M"}
