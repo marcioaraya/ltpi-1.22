@@ -17,7 +17,7 @@ try {
 	$pdo = new PDO($dsn, $user, $password);
 
 	if ($pdo) {
-		echo "Conectado ao schema $db com sucesso";
+		# echo "Conectado ao schema $db com sucesso";
 	}
 } catch (PDOException $e) {
 	echo $e->getMessage();
