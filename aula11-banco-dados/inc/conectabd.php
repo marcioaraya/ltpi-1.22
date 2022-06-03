@@ -7,9 +7,9 @@ $db = 'agenda';
 # não é recomendado utilizar o usuário 'root'!!
 # É preferível criar um usuário específico para cada
 # aplicação
-$user = 'root';
+$user = 'aplicacao_agenda';
 # senha
-$password = 'senac';
+$password = 'agenda123';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
 
