@@ -26,7 +26,7 @@ include "inc/conectabd.php"
             "<td>".$pessoa["id_pessoa"]."</td>".
             "<td>".$pessoa["ds_nome"]."</td>".
             "<td>".$pessoa["ds_email"]."</td>".
-            "<td><a href=".'"excluirPessoa.php?id="'.$pessoa["id_pessoa"].'">Excluir</a></td>';
+            "<td><a href=".'"excluirPessoa.php?id='.$pessoa["id_pessoa"].'">Excluir</a></td>';
             "</tr>";
     }
     echo '</table>';
