@@ -19,9 +19,16 @@ include "inc/conectabd.php"
     $statement->execute();
     $linhas = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+    echo '<table border="1">';
+    echo '<tr><th>Id</th><th>Nome</th><th>Email</th></tr>';
     foreach($linhas as $pessoa){
-        echo "<p>".$pessoa["id_pessoa"]." - ".$pessoa["ds_nome"]." - ".$pessoa["ds_email"]."</p>";
+        echo "<tr>".
+            "<td>".$pessoa["id_pessoa"]."</td>".
+            "<td>".$pessoa["ds_nome"]."</td>".
+            "<td>".$pessoa["ds_email"]."</td>".
+            "</tr>";
     }
+    echo '</table>';
 
     ?>
 
