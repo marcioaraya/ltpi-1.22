@@ -4,9 +4,8 @@ $host = 'localhost';
 # database ou schema
 $db = 'agenda';
 # usuario
-# não é recomendado utilizar o usuário 'root'!!
-# É preferível criar um usuário específico para cada
-# aplicação
+#    não é recomendado utilizar o usuário 'root'!!
+#    É preferível criar um usuário específico para cada aplicação
 $user = 'aplicacao_agenda';
 # senha
 $password = 'agenda123';

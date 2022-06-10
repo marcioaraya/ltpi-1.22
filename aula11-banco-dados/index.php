@@ -24,6 +24,7 @@ include "inc/conectabd.php"
     }
 
     ?>
-    
+
+    <p><a href="inserirPessoa.php">Incluir nova pessoa</a></p>
 </body>
 </html>
