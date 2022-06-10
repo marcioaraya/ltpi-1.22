@@ -19,5 +19,5 @@ try {
 		# echo "Conectado ao schema $db com sucesso";
 	}
 } catch (PDOException $e) {
-	echo $e->getMessage();
+	echo "Erro: ".$e->getMessage();
 }
