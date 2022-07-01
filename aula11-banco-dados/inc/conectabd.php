@@ -1,6 +1,6 @@
 <?php
 # endereço do servidor de banco de dados
-$host = 'localhost';
+$host = '127.0.0.1';
 # database ou schema
 $db = 'agenda';
 # usuario
@@ -14,6 +14,7 @@ $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
 
 try {
 	$pdo = new PDO($dsn, $user, $password);
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	if ($pdo) {
 		# echo "Conectado ao schema $db com sucesso";

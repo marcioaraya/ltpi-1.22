@@ -13,10 +13,10 @@ include "inc/conectabd.php"
     <h1>Agenda</h1>
     <?php
 
-    if (!isset($_GET["bt_sub"])) {
+    if (!isset($_POST["bt_sub"])) {
       // primeira vez, então exibe formulário
     ?>
-      <form  action="" method="get">
+      <form  action="" method="POST">
         <label for="nome">Nome</label>
         <input type="text" name="ds_nome" id="nome">
         <br>
@@ -36,20 +36,25 @@ include "inc/conectabd.php"
         <label for="telefone">Telefone</label>
         <input type="text" name="nr_telefone" id="telefone">
         <br>
+        <label for="senha">Informe uma Senha</label>
+        <input type="password" name="ds_senha" id="senha">
+        <br>
         <input type="submit" name="bt_sub" value="Inserir">
       </form>
 
     <?php
 
     } else {
-      $ds_nome = $_GET["ds_nome"];
-      $cd_sexo = $_GET["cd_sexo"];
-      $dt_nasc = $_GET["dt_nasc"]; # ano - mes - dia
-      $nr_telefone = $_GET["nr_telefone"];
-      $ds_email = $_GET["ds_email"];
+      $ds_nome = $_POST["ds_nome"];
+      $cd_sexo = $_POST["cd_sexo"];
+      $dt_nasc = $_POST["dt_nasc"]; # ano - mes - dia
+      $nr_telefone = $_POST["nr_telefone"];
+      $ds_email = $_POST["ds_email"];
+      $ds_senha = md5($_POST["ds_senha"]);
+
   
       try {
-          $sql = 'INSERT INTO `agenda`.`tb_pessoa` (`ds_nome`,`cd_sexo`,`dt_nasc`,`nr_telefone`,`ds_email`)  VALUES (:ds_nome,:cd_sexo,:dt_nasc,:nr_telefone,:ds_email);';
+          $sql = 'INSERT INTO `agenda`.`tb_pessoa` (`ds_nome`,`cd_sexo`,`dt_nasc`,`nr_telefone`,`ds_email`, `ds_senha`)  VALUES (:ds_nome,:cd_sexo,:dt_nasc,:nr_telefone,:ds_email, :ds_senha);';
           //echo ">>>sql ".$sql. "  fim <<<<";
           $stmt = $pdo->prepare($sql);
           $stmt->bindParam(':ds_nome', $ds_nome);
@@ -58,6 +63,7 @@ include "inc/conectabd.php"
           $stmt->bindParam(':dt_nasc', $dt_nasc);
           $stmt->bindParam(':nr_telefone', $nr_telefone);
           $stmt->bindParam(':ds_email', $ds_email);
+          $stmt->bindParam(':ds_senha', $ds_senha);
           $stmt->execute();
         
           if ($stmt->rowCount()>0) {

@@ -13,3 +13,13 @@ function lerPessoa($pdo, $id_pessoa){
     return $statement->fetch(PDO::FETCH_ASSOC);
 
 }
+
+function verificaUsuarioLogado(){
+    if (isset($_COOKIE["usuario"])) {
+        $ret[]=$_COOKIE["usuario"];
+        $ret[]=$_COOKIE["ts_login"];
+        return $ret;
+    } else {
+        return null;
+    }
+}

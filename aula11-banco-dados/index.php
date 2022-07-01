@@ -1,5 +1,12 @@
 <?php
-include "inc/conectabd.php"
+include "inc/conectabd.php";
+include "inc/funcoes.php";
+
+if ($usuario=verificaUsuarioLogado()){
+    
+} else {
+    header('Location: login.php');   
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,6 +17,9 @@ include "inc/conectabd.php"
     <title>Agenda</title>
 </head>
 <body>
+    <header>
+        <p>Olá! <?php echo $usuario[0]?> </p>
+    </header>
     <h1>Agenda</h1>
     <?php
 
