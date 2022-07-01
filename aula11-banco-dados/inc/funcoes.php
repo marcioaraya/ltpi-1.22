@@ -23,3 +23,10 @@ function verificaUsuarioLogado(){
         return null;
     }
 }
+
+function cabecalho($usuario){
+    date_default_timezone_set('America/Sao_Paulo');
+    echo "<header>";
+    echo "<p>Olá! ".$usuario[0].". Você efetuou login às ".date("d-m-Y H:i:s", $usuario[1])."<a href='logout.php'>Sair</a></p>";
+    echo "</header>";
+}

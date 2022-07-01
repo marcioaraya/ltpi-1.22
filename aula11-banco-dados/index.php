@@ -17,9 +17,7 @@ if ($usuario=verificaUsuarioLogado()){
     <title>Agenda</title>
 </head>
 <body>
-    <header>
-        <p>Olá! <?php echo $usuario[0]?> </p>
-    </header>
+    <?php cabecalho($usuario); ?>
     <h1>Agenda</h1>
     <?php
 

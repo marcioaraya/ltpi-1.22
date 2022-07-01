@@ -20,7 +20,7 @@
         <label for="email">E-mail</label>
         <input type="text" name="ds_email" id="email">
         <br>
-        <label for="senha">Informe uma Senha</label>
+        <label for="senha">Senha</label>
         <input type="password" name="ds_senha" id="senha">
         <br>
         <input type="submit" name="bt_sub" value="Login">
@@ -31,8 +31,8 @@
     } else {
       $ds_email = $_POST["ds_email"];
       $ds_senha = md5($_POST["ds_senha"]);
-echo $ds_senha."<br>";
-echo $ds_email."<br>";
+# echo $ds_senha."<br>";
+# echo $ds_email."<br>";
   
       try {
 
@@ -43,11 +43,15 @@ echo $ds_email."<br>";
             $statement->bindParam(':ds_senha', $ds_senha);
             $statement->execute();
             $row = $statement->fetch(PDO::FETCH_ASSOC);
-            print_r($row);
+            # print_r($row);
             if ($statement->rowCount()>0) {
                 setcookie("usuario", $row["ds_nome"]);
                 setcookie("ts_login", time());
                 header('Location: index.php');
+            } else {
+              echo "<p>Usuário/Senha inválido</p>";
+              echo "<p>Tente novamente</p>";
+              echo "<p><a href='login.php'>Ir para tela de login</a></p>";
             }
         } catch(PDOException $e) {
           echo 'Erro: ' . $e->getMessage();

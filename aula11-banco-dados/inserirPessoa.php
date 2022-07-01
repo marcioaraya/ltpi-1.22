@@ -1,5 +1,12 @@
 <?php
-include "inc/conectabd.php"
+include "inc/conectabd.php";
+include "inc/funcoes.php";
+
+if ($usuario=verificaUsuarioLogado()){
+    
+} else {
+    header('Location: login.php');   
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -10,7 +17,8 @@ include "inc/conectabd.php"
     <title>Agenda</title>
 </head>
 <body>
-    <h1>Agenda</h1>
+    <?php cabecalho($usuario); ?>
+    <h1>Agenda - Incluir Pessoa</h1>
     <?php
 
     if (!isset($_POST["bt_sub"])) {
