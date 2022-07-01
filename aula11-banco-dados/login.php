@@ -23,7 +23,7 @@
         <label for="senha">Informe uma Senha</label>
         <input type="password" name="ds_senha" id="senha">
         <br>
-        <input type="submit" name="bt_sub" value="Inserir">
+        <input type="submit" name="bt_sub" value="Login">
       </form>
 
     <?php
