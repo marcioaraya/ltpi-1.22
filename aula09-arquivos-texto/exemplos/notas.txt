@@ -1,0 +1,3 @@
+{"nome":"Pedro","media":"5","sexo":"M"}
+{"nome":"Jadir","media":"7","sexo":"ND"}
+{"nome":"Maria","media":"8","sexo":"F"}
